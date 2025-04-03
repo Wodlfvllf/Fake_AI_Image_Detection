@@ -92,7 +92,7 @@ docker build -t antifake-api .
 docker run -p 8000:8000 antifake-api
 ```
 
-### Run with Gunicorn for Production
+### Run with uvicorn for Production
 ```bash
 uvicorn antifake_api:app --host 0.0.0.0 --port 8080
 ```
