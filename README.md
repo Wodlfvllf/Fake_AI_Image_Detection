@@ -81,9 +81,7 @@ curl -X POST "http://localhost:8000/detect" \
 AntifakePrompt-API/
 │-- main.py                # FastAPI Application
 │-- model.py               # Model Inference Code
-│-- requirements.txt        # Dependencies
 │-- checkpoints/           # Model Checkpoints
-│-- temp/                  # Temporary Image Storage
 ```
 
 ## Deployment
@@ -96,7 +94,7 @@ docker run -p 8000:8000 antifake-api
 
 ### Run with Gunicorn for Production
 ```bash
-gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
+uvicorn antifake_api:app --host 0.0.0.0 --port 8080
 ```
 
 ## License
